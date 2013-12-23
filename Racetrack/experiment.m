@@ -7,14 +7,15 @@ global Racetrack num_states num_actions size_statespace num_features filter;
 
 addpath('MDPtoolbox');
 
-% racetrack (a), 1 means road, 0 = off-road
-% Racetrack = ones(12,35);
-% Racetrack(1:5, 1:32) = 0;
-% Racetrack(10, 1:4) = 0;
-% Racetrack(11, 1:8) = 0;
-% Racetrack(12, 1:12) = 0;
+%racetrack (a), 1 means road, 0 = off-road
+Racetrack = ones(12,35);
+Racetrack(1:5, 1:32) = 0;
+ Racetrack(10, 1:4) = 0;
+ Racetrack(11, 1:8) = 0;
+ Racetrack(12, 1:12) = 0;
 
 % racetrack (b), 1 means road, 0 = off-road
+%{
 Racetrack = ones(9,33);
 Racetrack(4:6,4:30) = 0;
 Corner = zeros(2,2);
@@ -23,7 +24,7 @@ Racetrack(1:2,1:2) = Corner;
 Racetrack(8:9,1:2) = rot90(Corner,1);
 Racetrack(8:9,32:33) = rot90(Corner,2);
 Racetrack(1:2,32:33) = rot90(Corner,3);
-
+%}
 discount = 0.99;
 epsilon = 0.1;
 num_features = 4;
