@@ -56,6 +56,11 @@ Temp = D(:,:,3,3);
 Temp(Racetrack > 0) = 1 / sum(Racetrack(:));
 D(:, :, 3, 3) = Temp;
 
+
+%my add
+filter = [0;0;3;3];
+
+
 % True reward function
 R = zeros(rows,columns,speeds_ver,speeds_hor);
 for row = 1:rows
